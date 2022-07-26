@@ -13,8 +13,8 @@ def create_confirmation_code():
     В коде 9 случайных цифр.
     '''
     numbers = string.digits
-    confirmation_code = ''.join(secrets.choice(numbers) for i in range(9))
-    return confirmation_code
+    return ''.join(secrets.choice(numbers) for i in range(9))
+    # return confirmation_code
 
 
 def create_access_token(user):

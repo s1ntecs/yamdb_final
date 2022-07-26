@@ -1,7 +1,6 @@
 from django.db import IntegrityError
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-
 from reviews.models import Category, Genre, Review, ReviewComment, Title
 from users.models import User
 
@@ -13,12 +12,12 @@ class ReviewSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         try:
-            review = Review.objects.create(**validated_data)
+            Review.objects.create(**validated_data)
         except IntegrityError:
             raise ValidationError(
                 {'error': 'Вы уже оставляли отзыв на данное произведение'}
             )
-        return review
+        return Review.objects.create(**validated_data)
 
     class Meta:
         fields = ('id', 'text', 'author', 'score', 'pub_date')
