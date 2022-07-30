@@ -1,4 +1,4 @@
-![example workflow](https://github.com/sintecs/yamdb_final/actions/workflows/yamdb_workflow/badge.svg)
+![example workflow](https://github.com/s1ntecs/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 # YaMDb api
 
 YaTube API это RESTful API, позволяющий создавать и редактировать отзывы на различные произведения, оценивать их и
