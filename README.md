@@ -1,5 +1,6 @@
 ![example workflow](https://github.com/s1ntecs/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 # YaMDb api
+address: 84.201.143.199
 
 YaTube API это RESTful API, позволяющий создавать и редактировать отзывы на различные произведения, оценивать их и
 оставлять комментарии к отзывам. В основе проекта лежат Django и Django REST Framework.
@@ -28,7 +29,7 @@ YaTube API это RESTful API, позволяющий создавать и ре
 Клонировать GitHub репозиторий на ваш локальный компьютер:
 
 ```
-git clone https://github.com/s1ntecs/infra_sp2.git
+git clone https://github.com/s1ntecs/yamdb_final.git
 
 ```
 
@@ -71,20 +72,8 @@ git clone https://github.com/s1ntecs/infra_sp2.git
     TELEGRAM_TOKEN - Телеграм токен
     USER - логин для входа на ваш сервер
 
-Склонируйте Докер контейнер:
-
-```
-sudo docker pull sintecs/yamdb_final:latest
-
-```
-Запустите Docker-compose:
-
-```
-sudo docker compose up -d --build
-
-```
-
-Теперь в контейнере web нужно выполнить миграции, создать суперпользователя и собрать статику:
+### При первом запуске проекта на сервере.
+Нужно выполнить миграции, создать суперпользователя и собрать статику:
 
 ```
 docker-compose exec web python manage.py migrate
@@ -104,8 +93,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 ```
 
-
-API будет доступен по адресу:
+## API будет доступен по адресу:
 
 ```
 http://localhost/api/v1/
